@@ -1,5 +1,7 @@
 echo "Configuring and building Thirdparty/DBoW2 ..."
 
+sed -i 's/++11/++14/g' CMakeLists.txt
+
 cd Thirdparty/DBoW2
 mkdir build
 cd build
