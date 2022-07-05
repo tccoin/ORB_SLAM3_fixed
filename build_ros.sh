@@ -1,7 +1,7 @@
 echo "Building ROS nodes"
 
 cd Examples_old/ROS/ORB_SLAM3
-source /opt/ros/noetic/setup.bash
+. /opt/ros/noetic/setup.sh
 export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:/home/dit/ORB_SLAM3/Examples_old/ROS/ORB_SLAM3
 rosdep init
 rosdep update
