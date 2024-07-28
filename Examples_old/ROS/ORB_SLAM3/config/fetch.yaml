@@ -6,10 +6,10 @@
 Camera.type: "PinHole"
 
 # Camera calibration and distortion parameters (OpenCV) 
-Camera.fx: 535.4
-Camera.fy: 539.2
-Camera.cx: 320.1
-Camera.cy: 247.6
+Camera.fx: 524.7531695164529
+Camera.fy: 523.7212572709401
+Camera.cx: 315.9679226092425
+Camera.cy: 240.239140218464
 
 Camera.k1: 0.0
 Camera.k2: 0.0
@@ -32,14 +32,34 @@ Camera.RGB: 1
 ThDepth: 40.0
 
 # Deptmap values factor
-DepthMapFactor: 1.0
+DepthMapFactor: 1000.0
+
+# Transformation from camera 0 to body-frame (imu)
+Tbc: !!opencv-matrix
+   rows: 4
+   cols: 4
+   dt: f
+   data: [ 0.0,  0.0,  1.0, 0,
+          -1.0,  0.0,  0.0, 0,
+           0.0, -1.0,  0.0, 0,
+           0.0,  0.0,  0.0, 1]
+
+# Do not insert KFs when recently lost
+InsertKFsWhenLost: 0
+
+# IMU noise
+IMU.NoiseGyro: 1e-02
+IMU.NoiseAcc:  1e-02
+IMU.GyroWalk:  1e-02
+IMU.AccWalk:   1e-02
+IMU.Frequency: 100
 
 #--------------------------------------------------------------------------------------------
 # ORB Parameters
 #--------------------------------------------------------------------------------------------
 
 # ORB Extractor: Number of features per image
-ORBextractor.nFeatures: 1000
+ORBextractor.nFeatures: 1250
 
 # ORB Extractor: Scale factor between levels in the scale pyramid 	
 ORBextractor.scaleFactor: 1.2
@@ -60,7 +80,7 @@ ORBextractor.minThFAST: 7
 Viewer.KeyFrameSize: 0.05
 Viewer.KeyFrameLineWidth: 1
 Viewer.GraphLineWidth: 0.9
-Viewer.PointSize:2
+Viewer.PointSize: 2
 Viewer.CameraSize: 0.08
 Viewer.CameraLineWidth: 3
 Viewer.ViewpointX: 0

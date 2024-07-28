@@ -34,7 +34,7 @@ cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
 sudo make install -j4
 
-cd ../../../
+cd ../../../Vocabulary
 
 echo "Uncompress vocabulary ..."
 
